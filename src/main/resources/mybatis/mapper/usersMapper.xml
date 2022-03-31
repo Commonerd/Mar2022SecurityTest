@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="user.security.dao.UsersDao">
+  
+  	<insert parameterType="user.security.dto.Users"
+  	id="insertUser">
+  	insert into users values (#{id}, #{password}, #{name}, 
+  	#{role}, 'T')
+	</insert>
+	  
+  	<select id="findById" parameterType="string" resultType="user.security.dto.Users">
+  		select * from users where id = #{id}
+  	</select>
+  
+  </mapper>
